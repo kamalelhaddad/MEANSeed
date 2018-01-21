@@ -1,0 +1,24 @@
+  h1 kamal
+  div(ng-repeat="book in books")
+    .row
+    br      
+    .col-md-2.col-sm-3.text-center
+      a.story-title(href='#')
+        img.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/women/{{$index}}.jpg', style='width:100px;height:100px')   
+    .col-md-10.col-sm-9
+      h3 {{book.title}}         
+      .row
+        .col-xs-9
+          h4
+            span.label.label-default {{book.site}} || {{book.mpaa}}
+          h4
+            small.text-muted(style="font-family:courier,'new courier';")
+              | {{book.time}}  &bull; 
+              a.text-muted(href='/book/{{book.id}}') Read More        
+        .col-xs-3         
+      br
+      br  
+  hr
+  a.btn.btn-primary.pull-right.btnNext(href='/')
+    | More 
+    i.glyphicon.glyphicon-chevron-right
